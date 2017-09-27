@@ -30,6 +30,7 @@ void limpiarMatriz(int**matriz,int filas,int columnas,int i=0,int j=0){
     *(*(matriz+i)+j)=0;
     //Retorna la funcion pero ahora trabaja en la siguiente posicion de la fila
     return limpiarMatriz(matriz,filas,columnas,i,j+1);
+}
 
 //Funcion que permite ingresar los elementos de manera recursiva
 void ingresarElementos(int**matriz,int filas,int columnas,int i=0, int j=0){
@@ -127,11 +128,11 @@ int main()
     cout<<"Ingrese el numero de filas de la segunda matriz"<<endl;
     cin>>filas2;
     //Evita que se genere un error en la multiplicacion de matrices por numero de filas y clumnas invalido
-    while(columnas1!=filas2){
+    /*while(columnas1!=filas2){
         cout<<"Numero de filas de la segunda matriz incorrecto. Debe ser igual al numero de columnas de la primera matriz."<<endl;
         cout<<"Vuelva a ingresar numero de filas de la segunda matriz "<<endl;
         cin>>filas2;
-    }
+    }*/
     cout<<"Ingrese el numero de columnas de la segunda matriz"<<endl;
     cin>>columnas2;
 
@@ -148,7 +149,6 @@ int main()
     ingresarElementos(matriz1,filas1,columnas1);
 
     //Inicializa, limpia, e ingresan los elementos de la segunda matriz
-    inicializarMatriz(matriz1,filas1,columnas1);
     inicializarMatriz(matriz2,filas2,columnas2);
     limpiarMatriz(matriz2,filas2,columnas2);
     cout<<"Ingresar elementos de la Matriz 2-------------------"<<endl;
@@ -165,7 +165,7 @@ int main()
     cout<<"Matriz Resultante -----------"<<endl;
     printMatriz(matriz3,filas1,columnas2);
 
-    //Desasigna todos los espacios asignados a las matrices
+
     borrarMatrices(matriz1,filas1);
     borrarMatrices(matriz2,filas2);
     borrarMatrices(matriz3,filas1);
